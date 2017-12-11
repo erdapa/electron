@@ -62,6 +62,8 @@ def main():
     if not args.overwrite:
       release = create_or_get_release_draft(github, releases, args.version,
                                             tag_exists)
+  else:
+      release = None
 
   # Upload Electron with GitHub Releases API.
   upload_electron(github, release, os.path.join(DIST_DIR, DIST_NAME),
